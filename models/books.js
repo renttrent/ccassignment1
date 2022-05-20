@@ -8,7 +8,7 @@ const BooksSchema = new Schema({
   genre: String, //like fiction or non fiction
   rating: String, // rating if you have read it out of 5
   language: String // language in which the book is released
-});
+}, { versionKey: false });
 
 const BooksModel = mongoose.model('books', BooksSchema);
 
