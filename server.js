@@ -42,7 +42,7 @@ app.get('/api', (req, res) => {
       { method: 'GET', path: '/api', description: 'Describes all available endpoints' },
       { method: 'GET', path: '/api/profile', description: 'Data about me' },
       { method: 'GET', path: '/api/books/', description: 'Get All books information' },
-      { method: 'POST', path: '/api/books', description: 'Create new book' },
+      { method: 'POST', path: '/api/books/', description: 'Create new book' },
       { method: 'PUT', path: '/api/books/:id', description: 'Update existing book information' },
       { method: 'DELETE', path: '/api/books/:id', description: 'Delete an existing book' },
       // TODO: Write other API end-points description here like above
