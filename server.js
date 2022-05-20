@@ -80,7 +80,7 @@ app.get('/api/books/', (req, res) => {
 /*
  * Add a book information into database
  */
-app.post('/api/books/', (req, res) => {
+app.post('/api/books/', async (req, res) => {
 
   /*
    * New Book information in req.body
@@ -94,19 +94,19 @@ app.post('/api/books/', (req, res) => {
    */
 
 
-  var newBook = new BooksModel({
-    title: req.body.title,
-    author: req.body.author,
-    releaseDate: req.body.author,
-    genre: req.body.genre,
-    rating: req.body.rating,
-    language: req.body.language
-  })
+  // var newBook = new BooksModel({
+  //   title: req.body.title,
+  //   author: req.body.author,
+  //   releaseDate: req.body.author,
+  //   genre: req.body.genre,
+  //   rating: req.body.rating,
+  //   language: req.body.language
+  // })
 
-
-  newBook.save((err) => {
-    if (err) res.json(409)
-  })
+  const newBook = await BooksModel.create(req.body)
+  // newBook.save((err) => {
+  //   if (err) res.json(409)
+  // })
 
   res.json(newBook);
 });
